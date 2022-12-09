@@ -1,0 +1,58 @@
+object orinted prpogramming
+what =?
+    object
+        entity
+            ->state/properties
+            ->behaviours
+object & classes
+-----------------------------------
+class=>> user defiend datatype/custom type
+example;-
+        class hero{
+            char num[100];
+            int health;
+            char level;
+        };
+-----------------------------------
+!important->
+    size of the empty class is 1
+------------------------------------
+?how to use properties??
+    we can access properties using .opreator
+    properties^Data_Memebers
+-----------------------------------------------
+??access Modefiers
+    ->Public
+    ->private
+    ->protected
+-----------------------------------------------
+Public access Modefiers??
+    use inside or outside of class
+-----------------------------------------------
+private access Modefiers
+    use only inside class.
+------------------------------------------
+we can change properties by writing this type of code.
+    hero ramesh;
+->>    !!if health is public properties only then we are able to change properties
+    ramesh.health = 70;
+------------------------------------------------------------------------------
+getter
+    if all properties are private and we want to change properties
+    the this will help use to set the condition inside the class to 
+    access the properties outside of the class.
+    example;-
+        int gethealth(){
+            return health;
+        }
+-----------------------------------------------------------------------
+setter
+    this will help us to write or set value in the main function
+    example;-
+        void sethealth(int h){
+            health = h;
+        }
+
+use these objects in main function like this;
+    -   ramesh.sethealth(700);
+    now health propertie is updated from blank to 700;
