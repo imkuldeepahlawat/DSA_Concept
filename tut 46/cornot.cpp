@@ -64,6 +64,20 @@ void pll(node* head){
     }
     cout<<endl;
 }
+bool cirornot(node* head){
+    node* temp = head;
+    while(temp != NULL){
+        if(temp->next == head){
+            cout<<"Ha Ye Circular Linkedlist hai"<<endl;
+            return true;
+        }
+        temp = temp->next;
+    }
+    cout<<endl<<"Ye Circular linked list Nahi hai"<<" ";
+    return false;
+}
+
+
 
 // main function
 int main(){
@@ -82,4 +96,9 @@ int main(){
     // hll(head,0);;
     head = kReverse(head,2);
     pll(head);
+    // testing for circular linked list yes or not
+            // tail->next = head;
+    bool yn = cirornot(head);
+    cout<<yn<<endl;
+
 }
