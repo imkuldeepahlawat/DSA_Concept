@@ -12,6 +12,7 @@ class node{
         this->next = NULL;
     }
 };
+
 // insertoion on head 
 void insertAtHead(node* &head,int d){
     node* n1 = new node(d);
