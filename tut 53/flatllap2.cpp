@@ -1,3 +1,19 @@
+#include<bits/stdc++.h>
+#include<bits/stdc++.h>
+using namespace std;
+
+class Node{
+    int data;
+    Node* next;
+    Node* child;
+
+    Node(int data){
+        this->data = data;
+        this->next = NULL;
+        this->child = NULL;
+    }
+};
+/*----------------------------------------------------------*/
 // without tle
 Node* merge( Node* first, Node* second){
    if( first == NULL){
@@ -37,6 +53,7 @@ Node* merge( Node* first, Node* second){
    dummy = dummy->child;
    return dummy;
 }
+/*---------------------------------------------------------------------------*/
 Node* flattenLinkedList(Node* head) 
 {
    if( head == NULL || head->next == NULL){
