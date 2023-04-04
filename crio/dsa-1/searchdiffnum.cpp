@@ -7,9 +7,9 @@ vector<int> twoNonRepeatingNumbers(int arr[], int n){
     /*approch*/
     // using bitmanipulation
     // found the xor of both value
-    int n = sizeof(arr);
+    // int n = sizeof(arr);
     int res =0;
-    for(int i =0;i<n){
+    for(int i : arr){
         res = res^i;
     }
     // find the bit of res 
@@ -17,7 +17,7 @@ vector<int> twoNonRepeatingNumbers(int arr[], int n){
    int temp = res&(-res);
    int a = 0,b = 0;
 //    again doing same process but with rightmost bit
-   for(int i : n){
+   for(int i : arr){
        if(i&temp == 1){
            a = a^i;
        }else{
