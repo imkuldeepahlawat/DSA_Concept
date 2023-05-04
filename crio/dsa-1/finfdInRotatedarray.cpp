@@ -2,78 +2,92 @@
 using namespace std;
 
 //   find pivot
-int findpiv(vector<int>& num){
+int findpiv(vector<int> &num)
+{
     int s = 0;
-    int e = num.size()-1;
-    int mid = s+(e-s)/2;
-    
-    while(s < e){
-        if(num[mid] > num[0]){
-            s = mid+1 ;
+    int e = num.size() - 1;
+    int mid = s + (e - s) / 2;
+
+    while (s < e)
+    {
+        if (num[mid] > num[0])
+        {
+            s = mid + 1;
         }
-        else{
+        else
+        {
             e = mid;
         }
-        mid = s+(e-s)/2;
+        mid = s + (e - s) / 2;
     }
-    return s-1;
-
+    return s - 1;
 }
 //   binar search
-int findNum(vector<int>& nums,int start,int end, int target){
-    int mid = start+(end-start)/2;
-    while(start <= end){
-        if(nums[mid] == target){
+int findNum(vector<int> &nums, int start, int end, int target)
+{
+    int mid = start + (end - start) / 2;
+    while (start <= end)
+    {
+        if (nums[mid] == target)
+        {
             return mid;
-        } else if(target < nums[mid]){
-            end = mid-1;
         }
-        else if(target > nums[mid]){
-            start = mid+1;
+        else if (target < nums[mid])
+        {
+            end = mid - 1;
         }
-        mid = start+(end-start)/2;
+        else if (target > nums[mid])
+        {
+            start = mid + 1;
+        }
+        mid = start + (end - start) / 2;
     }
     return -1;
-
 }
 
-    int search(vector<int>& nums, int target) {
-        // Your implementation goes here
-        int ans = -1;
-        // bruteforce solution
-        // for(int i = 0;i<nums.size();i++){
-        //     if(nums[i] == target){
-        //         return i;
-        //     }
-        // }
-        /*********binary search********/
-        int n = nums.size();
-        int piv = findpiv(nums);
-        cout<<nums[piv]<<" this is pivot"<<endl;
-        if(nums[n-1] < nums[0]){
-            if(target < nums[0]){
-                return findNum(nums,piv,n-1,target);
-            }
-            else{
-                cout<<"ans1";
-                return findNum(nums,0,piv,target);
-            }
+int search(vector<int> &nums, int target)
+{
+    // Your implementation goes here
+    int ans = -1;
+    // bruteforce solution
+    // for(int i = 0;i<nums.size();i++){
+    //     if(nums[i] == target){
+    //         return i;
+    //     }
+    // }
+    /*********binary search********/
+    int n = nums.size();
+    int piv = findpiv(nums);
+    cout << nums[piv] << " this is pivot" << endl;
+    if (nums[n - 1] < nums[0])
+    {
+        if (target < nums[0])
+        {
+            return findNum(nums, piv, n - 1, target);
         }
-        else{
-            cout<<"ans2";
-            return findNum(nums,0,n-1,target);
+        else
+        {
+            cout << "ans1";
+            return findNum(nums, 0, piv, target);
         }
-    	return ans;
     }
-
-int main() {
-    vector<int> nums ={4 ,5 ,6 ,9 ,10 ,2 ,3};
-
-    int ans =  search(nums,8);
-    cout<<ans<<" this is ans";
+    else
+    {
+        cout << "ans2";
+        return findNum(nums, 0, n - 1, target);
+    }
+    return ans;
 }
 
-/* 
+int main()
+{
+    vector<int> nums = {4, 5, 6, 9, 10, 2, 3};
+
+    int ans = search(nums, 8);
+    cout << ans << " this is ans";
+}
+
+/*
 Crio Methodology
 
 Milestone 1: Understand the problem clearly
