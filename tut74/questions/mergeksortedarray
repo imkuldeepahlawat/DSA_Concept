@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 
 class node{
     public:
@@ -43,6 +43,7 @@ vector<int> mergeKSortedArrays(vector<vector<int>>&kArrays, int k)
             node* next = new node(kArrays[arrayIndex][elementIndex+1],arrayIndex,elementIndex+1);
             pq.push(next);
         }
+    
 
     }
     // ans.push_back()
