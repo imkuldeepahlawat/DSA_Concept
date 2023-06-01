@@ -1,0 +1,17 @@
+
+recurssion is algorithm where a function callin g to itself
+
+********************************Like This function
+fn(n){
+    fn(n);
+}
+********************************
+but if it will work like thi sthen it will stuck in the infinite loop
+
+so we have some parts in the recuression function, from that we can stop it
+1.base case // it will help as to stop the recurssion
+2.small calculation  //it will help to handle the logic
+3.recurssive formula // it will help us to use recurssive approach insid ethe fucntion
+
+********************************
+second and third we wil change to our requirements
