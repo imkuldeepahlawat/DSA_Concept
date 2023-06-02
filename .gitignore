@@ -1,5 +1,6 @@
 /newStart
-.exe
+*.exe
 /.vscode
 inputf.in 
 outputf.in 
+.gitignore
